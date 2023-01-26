@@ -20,5 +20,4 @@ RSpec.describe Like, type: :model do
     update_like = subject.update_likes_counter
     expect(update_like.likes_counter).to eql 1
   end
-
 end

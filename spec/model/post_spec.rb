@@ -39,5 +39,4 @@ RSpec.describe Post, type: :model do
     update_post = subject.update_posts_counter
     expect(update_post.posts_counter).to eql 1
   end
-
 end
