@@ -2,6 +2,9 @@ class Post < ApplicationRecord
   belongs_to :author, foreign_key: 'author_id', class_name: 'User'
   has_many :comments, foreign_key: :author_id
   has_many :likes, foreign_key: :author_id
+  validates :title, length: { maximum: 250 }
+  validates :comments_counter, length: { minimum: 0 }, numericality: { only_integer: true }
+  validates :likes_counter, length: { minimum: 0 }, numericality: { only_integer: true }
 
   def update_posts_counter
     author.increment(:posts_counter)
