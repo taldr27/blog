@@ -1,4 +1,5 @@
 require "rails_helper"
+require "json/ext"
 RSpec.describe "Users", :type => :request do
   describe 'GET #users/index' do
     before(:example) { get('/users#index') }
@@ -8,7 +9,10 @@ RSpec.describe "Users", :type => :request do
     it "renders 'index' template" do
       expect(response).to render_template('index')
     end
-    it "should render correct placeholder in the page" do
+    it "should render correct placeholder in index the page" do
+      expect(response.body.to_json).to include("Users index are coming soon!")
+    end
+    it "should render correct placeholder in the page using assert_select" do
       assert_select "h1", "Users index are coming soon!"
     end
   end
@@ -20,7 +24,10 @@ RSpec.describe "Users", :type => :request do
     it "renders 'show' template" do
       expect(response).to render_template('show')
     end
-    it "should render correct placeholder in the show users page" do
+    it "should render correct placeholder in the page" do
+      expect(response.body.to_json).to include("Showing users!")
+    end
+    it "should render correct placeholder in the show users page using assert_select" do
       assert_select "h1", "Showing users!"
     end
   end
