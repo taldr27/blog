@@ -49,9 +49,27 @@ In order to run this project you need:
 - You need to have ruby on rails installed in your computer.
 
 ### Setup
+Clone this repository to your desired folder:
 ```
 - To clone the repository run this command - "git@github.com:taldr27/blog-app.git" OR "https://github.com/taldr27/blog-app.git"
 - cd blog-app
+```
+### Installation
+Install this project with:
+```
+- bundle install
+```
+
+### Usage
+To run the project, execute the following command:
+```
+- railser server -p 4001
+```
+
+### Run tests
+To run tests, run the following command:
+```
+- rspec
 ```
 ## 👥 Authors <a name="authors"></a>
 
