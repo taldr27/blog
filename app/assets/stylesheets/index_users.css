@@ -1,0 +1,21 @@
+.users-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 3em;
+}
+
+.user-card {
+  display: flex;
+  gap: 2em;
+}
+
+.user-data {
+  border: 3px solid black;
+  width: 85%;
+}
+
+.user-image {
+  width: 15%;
+  border: 3px solid black;
+}
