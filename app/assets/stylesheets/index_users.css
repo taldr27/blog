@@ -19,3 +19,9 @@
   width: 15%;
   border: 3px solid black;
 }
+
+.user-button {
+  font-style: none;
+  text-decoration: none;
+  color: black;
+}
