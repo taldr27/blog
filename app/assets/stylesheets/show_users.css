@@ -11,3 +11,12 @@
   border: 3px solid black;
   padding: 2em;
 }
+
+.post-button {
+  align-self: center;
+}
+
+button {
+  padding: 1em;
+  border: 3px solid black;
+}
