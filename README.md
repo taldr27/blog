@@ -38,7 +38,9 @@
 </details>
 
 ### Key Features <a name="key-features"></a>
+- **Use of the previous created methods to count the likes and users for each post**
 - **Database where you can add information about users, likes and posts**
+- **Implemented design from the sneak peek wireframe**
 - **Add likes to each post**
 - **Add comments to each post**
 - **Add new users to the database**
