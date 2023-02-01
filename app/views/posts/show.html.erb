@@ -8,6 +8,7 @@
     <h4><%= @post.title %><h4>
     <p><%= @post.text %></p>
   </div>
+  <%@post.reload%>
   <% if @post.recent_comments.length > 0 %>
     <div class="comments-container">
       <% @post.recent_comments.each do |comment| %>
