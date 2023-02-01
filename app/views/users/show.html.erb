@@ -1,4 +1,3 @@
-<h1>Showing users!</h1>
 <div class="users-container">
   <%= render "shared/user_data" %>
     <div class="user-bio">
@@ -8,10 +7,15 @@
     <div class="posts-container">
       <% @user.latest_posts.each_with_index do |post, index| %>
         <div class="post-card">
-          <h2>Post: <%= index + 1 %></h2>
-          <p><%= post.text %></p>
-          <span>Comments: <%= post.comments_counter %></span>
-          <span>Likes: <%= post.likes_counter %></span>
+          <div>
+            <h2>Post: <%= index + 1 %></h2>
+            <p><%= post.text %></p>
+          </div>
+          <div>
+            <span>Comments: <%= post.comments_counter %></span>
+            <span>Likes: <%= post.likes_counter %></span>
+          </div>
+
         </div>
       <% end %>
         <%= link_to "<button>See All Posts</button>".html_safe, post_path_url(@user), :class => 'post-button' %>
