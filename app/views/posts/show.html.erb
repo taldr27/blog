@@ -1,1 +1,12 @@
 <h1>Showing Posts!</h1>
+<div class="posts-container">
+  <% @user.latest_posts.each_with_index do |post, index| %>
+    <div class="post-card">
+      <h2>Post: <%= index + 1 %></h2>
+      <p><%= post.text %></p>
+      <span>Comments: <%= post.comments_counter %></span>
+      <span>Likes: <%= post.likes_counter %></span>
+    </div>
+  <% end %>
+    <%= link_to "See All Posts", post_path_url(@user), :class => 'post-button' %>
+</div>
