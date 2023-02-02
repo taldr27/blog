@@ -1,6 +1,6 @@
  <%= render "shared/user_data"%>
  <div class="posts-container">
-  <% @latest_posts.each_with_index do |post, index| %>
+  <% @posts.each_with_index do |post, index| %>
     <%= link_to post_show_path(:id => post.id) do %>
       <div class="post-card">
         <div>
