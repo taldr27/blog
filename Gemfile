@@ -2,12 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.2'
-gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
-
-# To be able to run controllers testing
-gem 'rails-controller-testing'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -70,6 +67,9 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  # To be able to run controllers testing
+  gem 'rails-controller-testing'
 end

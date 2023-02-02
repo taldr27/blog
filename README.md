@@ -38,7 +38,12 @@
 </details>
 
 ### Key Features <a name="key-features"></a>
-- **Database that contains information about users, likes and posts**
+- **Use of the previous created methods to count the likes and users for each post**
+- **Database where you can add information about users, likes and posts**
+- **Implemented design from the sneak peek wireframe**
+- **Add likes to each post**
+- **Add comments to each post**
+- **Add new users to the database**
 ## 💻 Getting Started <a name="getting-started"></a>
 > To get a local copy up and running, follow these steps.
 
@@ -84,7 +89,11 @@ To run tests, run the following command:
 
 > These are some of the future features we want to add.
 
-- [ ] **[Workin on them]**
+- [ ] ***Add users manually inside the page without using console***
+- [ ] ***Add posts manually inside the page without using console***
+- [ ] ***Add Devise***
+- [ ] ***Add authorization rules to the database***
+- [ ] ***Use an API endpoint***
 
 ## 🤝 Contributing <a name="contributing"></a>
 

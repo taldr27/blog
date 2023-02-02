@@ -1,1 +1,18 @@
-<h1>Showing Posts!</h1>
+<div class="posts-container">
+  <div class="post-data">
+    <div class="post-title">
+      <h2>Post #<%= @post.id %> by <%=@user.name%></h2>
+      <span>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></span>
+    </div>
+    <h4><%= @post.title %><h4>
+    <p><%= @post.text %></p>
+  </div>
+  <% @post.reload %>
+    <div class="comments-container">
+      <% @comments.each do |comment| %>
+        <% if comment.post_id == @post.id %>
+        <h4>Post_ID:<%=  comment.post_id %>:<%= comment.text %></h4>
+        <%end%>
+      <% end %>
+    </div>
+</div>
