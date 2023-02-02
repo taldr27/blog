@@ -16,7 +16,7 @@ class PostsController < ApplicationController
         flash.now[:notice] = 'Comment created successfully'
         redirect_to user_path(current_user)
       else
-        redirect_to new
+        redirect_to user_path(current_user)
       end
   end 
 
