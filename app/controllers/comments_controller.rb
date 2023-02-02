@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     if @comment.save!
       redirect_to post_show_path(current_user)
     else
-      redirect_to post_show_path(current_user)
+      flash.now[:alert] = 'Comment creation failed'
     end
   end
 

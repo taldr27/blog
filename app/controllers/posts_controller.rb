@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     @posts = Post.where(author_id: params[:user_id])
     @comments = Comment.all
   end
-  
+
   def new
     @post = Post.new
   end
@@ -12,13 +12,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.author_id = current_user
-      if @post.save!
-        flash.now[:notice] = 'Comment created successfully'
-        redirect_to user_path(current_user)
-      else
-        redirect_to user_path(current_user)
-      end
-  end 
+    flash.now[:notice] = 'Comment created successfully' if @post.save!
+    redirect_to user_path(current_user)
+  end
 
   def show
     @post = Post.find(params[:id])
