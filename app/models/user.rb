@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
   has_many :comments, foreign_key: :author_id
@@ -12,9 +10,4 @@ class User < ApplicationRecord
   def latest_posts
     posts.order(created_at: :desc).limit(3)
   end
-#   after_create :send_confirmation_email
-
-# def send_confirmation_email
-#   self.send_confirmation_instructions
-# end
 end
