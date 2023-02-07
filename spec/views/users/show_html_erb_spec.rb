@@ -5,7 +5,7 @@ RSpec.describe 'User show page', type: :feature do
   describe 'User show page process' do
     before(:each) do
       @user = User.create(name: 'Diego', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-        bio: 'I´m a student', posts_counter: 2)
+                          bio: 'I´m a student', posts_counter: 2)
       Post.create(author_id: @user.id, title: 'My first post', text: 'This is my first post')
       Post.create(author_id: @user.id, title: 'My second post', text: 'This is my second post')
       Post.create(author_id: @user.id, title: 'My third post', text: 'This is my third post')
