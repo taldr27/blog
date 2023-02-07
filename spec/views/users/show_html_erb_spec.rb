@@ -6,10 +6,10 @@ RSpec.describe 'User show page', type: :feature do
     before(:each) do
       @user = User.create(name: 'Diego', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
         bio: 'I´m a student', posts_counter: 2)
-      Post.create(author_id: @user, title: 'My first post', text: 'This is my first post')
-      Post.create(author_id: @user, title: 'My second post', text: 'This is my second post')
-      Post.create(author_id: @user, title: 'My third post', text: 'This is my third post')
-      @post = Post.create(author_id: @user, title: 'My fourth post', text: 'This is my fourth post')
+      Post.create(author_id: @user.id, title: 'My first post', text: 'This is my first post')
+      Post.create(author_id: @user.id, title: 'My second post', text: 'This is my second post')
+      Post.create(author_id: @user.id, title: 'My third post', text: 'This is my third post')
+      Post.create(author_id: @user.id, title: 'My fourth post', text: 'This is my fourth post')
 
       visit user_path(@user.id)
     end
@@ -39,11 +39,11 @@ RSpec.describe 'User show page', type: :feature do
       expect(page).to have_current_path(post_path_path(@user))
     end
 
-    # it 'displays the last 3 posts' do
-    #   visit user_path(@user)
-    #   expect(page).to have_content('This is my second post')
-    #   expect(page).to have_content('This is my third post')
-    #   expect(page).to have_content('This is my fourth post')
-    # end
+    it 'displays the last 3 posts' do
+      visit user_path(@user)
+      expect(page).to have_content('This is my second post')
+      expect(page).to have_content('This is my third post')
+      expect(page).to have_content('This is my fourth post')
+    end
   end
 end
