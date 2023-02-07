@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: blog_development
+  database: new_blog_development
   username: lana
   password: 123
 
@@ -59,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: blog_test
+  database: new_blog_test
   username: lana
   password: 123
 
@@ -85,6 +85,6 @@ test:
 #
 production:
   <<: *default
-  database: blog_production
+  database: new_blog_production
   username: lana
   password: 123

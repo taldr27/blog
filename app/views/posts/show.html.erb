@@ -11,7 +11,7 @@
   <div class="comments-container">
     <% @comments.each do |comment| %>
       <% if comment.post_id == @post.id %>
-      <h4>Post_ID:<%=  comment.post_id %>:<%= comment.text %></h4>
+      <h4>Username:<%= comment.user.name %> => <%= comment.text %></h4>
       <%end%>
     <% end %>
   </div>
