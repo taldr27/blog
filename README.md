@@ -97,7 +97,6 @@ To run tests, run the following command:
 
 - [ ] ***Add users manually inside the page without using console***
 - [ ] ***Add posts manually inside the page without using console***
-- [ ] ***Add Devise***
 - [ ] ***Add authorization rules to the database***
 - [ ] ***Use an API endpoint***
 
