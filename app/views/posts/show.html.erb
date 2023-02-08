@@ -8,10 +8,12 @@
     <p><%= @post.text %></p>
   </div>
   <%= render "shared/add_like"%>
+  <%= button_to 'Delete Post', post_path(@post.id), method: :delete, data: {turbo_method: :delete} %>
   <div class="comments-container">
     <% @comments.each do |comment| %>
       <% if comment.post_id == @post.id %>
       <h4>Username:<%= comment.user.name %> => <%= comment.text %></h4>
+      <%= button_to 'Delete comment', comment_path(comment.id), method: :delete, data: {turbo_method: :delete} %>
       <%end%>
     <% end %>
   </div>
