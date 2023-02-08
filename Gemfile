@@ -7,6 +7,8 @@ gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
 
 ruby '3.1.3'
 
+gem 'cancancan'
+
 gem 'devise'
 gem 'letter_opener'
 
