@@ -5,15 +5,15 @@ class Api::V1::CommentsController < Api::V1::ApplicationController
   end
 
   def create
-    comment = Comment.new(text: comment_params['text'], 
-                          author_id: comment_params['author_id'], 
-                          post_id:  params['post_id'])
-   if comment.save
-     render json: comment, status: :created
-   else
-     render json: { errors: comment.errors }, status: :unprocessable_entity
-   end
- end
+    comment = Comment.new(text: comment_params['text'],
+                          author_id: comment_params['author_id'],
+                          post_id: params['post_id'])
+    if comment.save
+      render json: comment, status: :created
+    else
+      render json: { errors: comment.errors }, status: :unprocessable_entity
+    end
+  end
 
   private
 
