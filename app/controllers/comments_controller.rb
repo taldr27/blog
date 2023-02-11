@@ -1,25 +1,23 @@
-class CommentsController < ApplicationController
-  def new
-    @comment = Comment.new
+class Api::V1::CommentsController < Api::V1::ApplicationController
+  def index
+    comments = Post.find(params[:post_id]).comments
+    render json: comments, status: :ok
   end
 
   def create
-    @comment = Comment.new(comment_params)
-    @comment.author_id = current_user.id
-    if @comment.save!
-      redirect_to post_show_path(current_user.id)
-    else
-      flash.now[:alert] = 'Comment creation failed'
-    end
-  end
+    comment = Comment.new(text: comment_params['text'], 
+                          author_id: comment_params['author_id'], 
+                          post_id:  params['post_id'])
+   if comment.save
+     render json: comment, status: :created
+   else
+     render json: { errors: comment.errors }, status: :unprocessable_entity
+   end
+ end
 
-  def destroy
-    @comment = Comment.find(params[:id])
-    @comment.destroy
-    redirect_to post_show_path(current_user.id)
-  end
+  private
 
   def comment_params
-    params.require(:comment).permit(:post_id, :text)
+    params.require(:comment).permit(:text, :author_id)
   end
 end
